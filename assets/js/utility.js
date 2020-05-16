@@ -28,8 +28,8 @@ var ellaTx;
 function init_web3s(){
     var Web3 = require('web3');
     //web3_eth = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));//Localhost
-    //web3_eth = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/6efe4dc6516a44e89b3d38dd9e551415"));//Ropsten
-    web3_eth_search = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/6efe4dc6516a44e89b3d38dd9e551415"));//MainNet
+    //web3_eth = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/KEY"));//Ropsten
+    web3_eth_search = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/KEY"));//MainNet
     //web3_etc_search = new Web3(new Web3.providers.HttpProvider("https://web3.gastracker.io")); //Dead 2019
     //web3_etc_search = new Web3(new Web3.providers.HttpProvider("https://etc-geth.0xinfra.com"));
     //web3_clo_search = new Web3(new Web3.providers.HttpProvider("https://clo-geth.0xinfra.com"));
