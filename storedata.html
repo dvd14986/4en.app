@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124518910-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-124518910-1');
+        </script>
+        <!-- Analytics END-->
+        <meta charset="utf-8">
+        <title>Store data | 4en.app - Store your data on the blockchains</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <!-- styles -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
+        <link href="assets/css/animate.css" rel="stylesheet" />
+        <link href="assets/css/style_checkbox.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Roboto+Condensed:400,300,700" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <link href="assets/color/default.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+       <!-- Javascript Library Files -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.easing.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/parallax/jquery.parallax-1.1.3.js"></script>
+        <script src="assets/js/nagging-menu.js"></script>
+        <script src="assets/js/jquery.nav.js"></script>
+        <script src="assets/js/portfolio/jquery.quicksand.js"></script>
+        <script src="assets/js/portfolio/setting.js"></script>
+        <script src="assets/js/hover/jquery-hover-effect.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="assets/js/animate.js"></script>
+        <!-- Template Custom Javascript File -->
+        <script src="assets/js/custom.js"></script>
+        <script src="assets/js/sc_interface.js"></script>
+        <script src="assets/js/apicall.js"></script>
+        <script src="assets/js/file.js"></script>
+        <script src="assets/js/FileSaver.js"></script>
+        <script src="assets/js/utility.js"></script>
+        <script src="assets/js/web3.js"></script>
+        <script src="assets/js/abi-decoder.js"></script>
+        <script src="assets/js/utf8.js"></script>
+    </head>
+    <body onload="update_stats();presetEnv();checkDestBlockchain();init_web3s();">
+        <header>
+        <!-- start top -->
+       <div id="topnav" class="navbar navbar-fixed-top default">
+          <div class="navbar-inner">
+            <div class="container">
+              <div class="navigation">
+                <nav>
+                  <ul class="nav pull-right">
+                      <li><a href="index.html#intro"><i class="fa fa-home"></i>  Home</a></li>
+                    <li><a href="index.html#about"><i class="fa fa-info-circle"></i> About</a></li>
+                    <li><a href="index.html#services"><i class="fa fa-cogs"></i> How it works</a></li>
+                    <li><a href="index.html#contact"><i class="fa fa-envelope"></i> Contact</a></li>
+                    <li><a href="getstarted.html" class="external"><i class="fa fa-rocket"></i> Get Started</a></li>
+                    <li class="current"><a href="storedata.html" class="external"><i class="fa fa-upload"></i> Store your data on the blockchain</a></li>
+                    <li><a href="getdata.html" class="external"><i class="fa fa-download"></i>  Get data from the blockchain</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <!--/.nav-collapse -->
+            </div>
+          </div>
+        </div>
+        <!-- end top -->
+        </header>
+        <!-- section intro -->
+        <section id="intro" class="inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="inner-heading">
+                            <h2><i class="fa fa-upload" style="color: rgb(0, 136, 204);"></i>  Store data into the blockchain</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section intro -->
+        <!-- section main content -->
+        <section class="section demoicon">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <h1>STEP 1: Choose destination blockchain!</h1>
+                        <section>
+                        <div>
+                          <input type="radio" id="control_01" name="select" value="1" checked onclick="checkDestBlockchain()">
+                          <label for="control_01">
+                            <div>
+                                <div class="network_header">
+                                    <h2>Ethereum (ETH)</h2>
+                                    <img src="assets/img/network/eth.png">
+                                </div>
+                                <div class="network_stats">
+                                    <ul class="stats">
+                                        <li>Nethash: <span id="eth_nethash"></span></li>
+                                        <li>Blocktime: <span id="eth_block_time"></span></li>
+                                        <li>Block Reward: <span id="eth_block_rew"></span></li>
+                                        <li>Blockchain Height: <span id="eth_block_height"></span></li>
+                                        <li>Total Coin mined: <span id="eth_coin_mined"></span></li>
+                                        <li>Price BTC: <span id="eth_price_btc"></span></li>
+                                        <li>Price USD: <span id="eth_price_usd"></span></li>
+                                        <li>Price EUR: <span id="eth_price_eur"></span></li>
+                                        <li>Web site: <span id="eth_web"><a href="https://www.ethereum.org/">ethereum.org</a></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div id="01_btn" class="row" style="text-align:center; display: none;">
+                            <span>
+                                <b>Metamask: </b>Custom RPC not required. Select Main Ethreum Network from Metamask before. Webpage could refresh after network set on Metamask.
+                            </span><br>
+                            <a href="#step2">
+                                <button class="btn btn-large btn-theme" id="gotostep2_eth">Done! Go to next step! >>>>></button>
+                            </a>
+                        </div>
+                        <!--<div>
+                          <input type="radio" id="control_04" name="select" value="4" onclick="checkDestBlockchain()">
+                          <label for="control_04">
+                            <div>
+                                <div class="network_header">
+                                    <h2>Ellaism (ELLA)</h2>
+                                    <img src="assets/img/network/ella.png">
+                                </div>
+                                <div class="network_stats">
+                                    <ul class="stats">
+                                        <li>Nethash: <span id="ella_nethash"></span></li>
+                                        <li>Blocktime: <span id="ella_block_time"></span></li>
+                                        <li>Block Reward: <span id="ella_block_rew"></span></li>
+                                        <li>Blockchain Height: <span id="ella_block_height"></span></li>
+                                        <li>Total Coin mined: <span id="ella_coin_mined"></span></li>
+                                        <li>Price BTC: <span id="ella_price_btc"></span></li>
+                                        <li>Price USD: <span id="ella_price_usd"></span></li>
+                                        <li>Price EUR: <span id="ella_price_eur"></span></li>
+                                        <li>Web site: <span id="ella_web"><a href="https://www.ellaism.io/">ellaism.io</a></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div id="04_btn" class="row" style="text-align:center; display: none;">
+                            <span>
+                                <b>Metamask: </b><u>https://jsonrpc.ellaism.io/</u>  Select Custom RPC and insert ELLA RPC before go to the next step. Webpage could refresh after network set on Metamask.
+                            </span><br>
+                            <a href="#step2">
+                                <button class="btn btn-large btn-theme" id="gotostep2_ella">Done! Go to next step! >>>>></button>
+                            </a>
+                        </div> <!--Dead-->
+                        <div>
+                          <input type="radio" id="control_02" name="select" value="2" onclick="checkDestBlockchain()" disabled>
+                          <label for="control_02">
+                               <div>
+                                <div class="network_header">
+                                    <h2>Ethereum Classic(ETC)</h2>
+                                    <img src="assets/img/network/etc.png">
+                                    <h2>Coming soon</h2><br>
+                                    <h3>4en.app is ready to work, waiting metamask adding support for ETC transactions.</h3>
+                                </div>
+                                <div class="network_stats">
+                                    <ul class="stats">
+                                        <li>Nethash: <span id="etc_nethash"></span></li>
+                                        <li>Blocktime: <span id="etc_block_time"></span></li>
+                                        <li>Block Reward: <span id="etc_block_rew"></span></li>
+                                        <li>Blockchain Height: <span id="etc_block_height"></span></li>
+                                        <li>Total Coin mined: <span id="etc_coin_mined"></span></li>
+                                        <li>Price BTC: <span id="etc_price_btc"></span></li>
+                                        <li>Price USD: <span id="etc_price_usd"></span></li>
+                                        <li>Price EUR: <span id="etc_price_eur"></span></li>
+                                        <li>Web site: <span id="etc_web"><a href="https://ethereumclassic.org/">ethereumclassic.org</a></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div id="02_btn" class="row" style="text-align:center; display: none;">
+                            <span>
+                                <b>Metamask: </b><u>https://etc-geth.0xinfra.com/</u>  Select Custom RPC and insert ETC RPC before go to the next step. Webpage could refresh after network set on Metamask.
+                            </span><br>
+                            <a href="#step2">
+                                <button class="btn btn-large btn-theme" id="gototep2_etc">Done! Go to next step! >>>>></button>
+                            </a>
+                        </div>
+                        <div>
+                          <input type="radio" id="control_03" name="select" value="3" onclick="checkDestBlockchain()" disabled>
+                          <label for="control_03">
+                            <div>
+                                <div class="network_header">
+                                    <h2>Callisto Network (CLO)</h2>
+                                    <img src="assets/img/network/clo.png">
+                                    <h2>Coming soon</h2>
+                                    <h3>4en.app is ready to work, waiting metamask adding support for CLO transactions.</h3>
+                                </div>
+                                <div class="network_stats">
+                                    <ul class="stats">
+                                        <li>Nethash: <span id="clo_nethash"></span></li>
+                                        <li>Blocktime: <span id="clo_block_time"></span></li>
+                                        <li>Block Reward: <span id="clo_block_rew"></span></li>
+                                        <li>Blockchain Height: <span id="clo_block_height"></span></li>
+                                        <li>Total Coin mined: <span id="clo_coin_mined"></span></li>
+                                        <li>Price BTC: <span id="clo_price_btc"></span></li>
+                                        <li>Price USD: <span id="clo_price_usd"></span></li>
+                                        <li>Price EUR: <span id="clo_price_eur"></span></li>
+                                        <li>Web site: <span id="clo_web"><a href="https://www.callisto.network/">callisto.network</a></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div id="03_btn" class="row" style="text-align:center; display: none;">
+                            <span>
+                                <b>Metamask: </b><u>https://clo-geth.0xinfra.com/</u>  Select Custom RPC and insert CLO RPC before go to the next step. Webpage could refresh after network set on Metamask.
+                            </span><br>
+                            <a href="#step2">
+                                <button class="btn btn-large btn-theme" id="gotostep2_clo">Done! Go to next step! >>>>></button>
+                            </a>
+                        </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="step2" id="input" class="section demoicon">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <h1>STEP 2: Write your text or upload your file!</h1>
+                    </div>
+                </div>
+          <div class="row">
+            <div class="span6">
+                <h4><strong>Upload your file!</strong></h4>
+                <p>
+                    You can upload all type of file but with some limitation:<br>
+                    <ul>
+                        <li>Size cannot exceed 5Kbyte.</li>
+                        <li>File cannot contain null(\u0000) char.</li>
+                        <li>File must be UTF-8 encodable.</li>
+                    </ul>
+                    Unrecognized type of file, or file that don't fills the above requirements will not be accepted.
+                </p>
+                <p>
+                    <input type="file" name="file" id="files" class="inputfile"/>
+                    <label for="files" class="btn-large btn-theme"><i class="fa fa-upload"></i> Upload a file</label>
+                </p>
+                <p>
+                    <div id="drop_zone">Drop file here</div>
+                </p>
+                <p>
+                    <div style="display: block; word-wrap: break-word;">
+                        <output id="list"></output>
+                    </div>
+                </p>
+              <p>
+                <div id="byte_range"></div>
+              </p>
+              <p>
+                    <button class="btn btn-large btn-theme" id="reset" onclick="resetFile()">Reset</button>
+              </p>
+            </div>
+            <div class="span6" id="textbox">
+              <!-- start contact form -->
+                <ul class="contact-list">
+                    <li class="form-group">
+                      <h4><strong>... Or write your text directly!</strong></h4>
+                      <textarea id="byte_content" class="form_textarea" name="message" rows="12" data-rule="required" data-msg="Please write something for us" placeholder="Text" onkeyup="textSize(this)" onchange="textSize()"></textarea>
+                    <span id=textByteSize>0 bytes</span>
+                    </li>
+                </ul>
+           </div>
+                 <div class="span6">
+                    <p>	 
+                     <button class="btn btn-large btn-theme" id="validate" onclick="checkNull();">Validate input!</button>
+                     </p>
+                 </div>
+                 <div class="span6">
+                         <a href="#step3"><button class="btn btn-large btn-theme" id="gotostep3" style="display: none">Done! Go to next step! >>>>></button></a>
+                 </div>
+            </div>
+        </div>
+     </section>
+        <section id="step3" class="inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="inner-heading">
+                            <h1>STEP 3: Store it!</h1>
+                        </div>
+                        <b>Destination blockchain: </b><span id="destBC"></span><br>
+                        Click on <b>Store it!</b> button and confirm the operation from Metamask window. If it don't opens automatically, click on icon in the browser bar.<br>
+                        Remember to increase the default Metamask gas price to speed up the validation from the network!<br>
+                        Transaction could take some time to be processed from the nodes, then wait Metamask confirmation to check if the storage success from <a href="getdata.html">Get data</a> page.<br>
+                        <b>Save your transaction hash to recover your file later!</b>
+                        <!--<b>Metamask Custom RPC: </b><span id="metamaskRPC"></span><br>-->
+                          <p>
+                            <button class="btn btn-large btn-theme" id="store" onclick="storedata_eth();">Store it!</button>
+                        </p>
+                        <div id="loader" style="display: none">      
+                            <img src="assets/svg-loader/tail-spin.svg"/>
+                         </div>
+                        <div id="errorTX">
+                            <h3>Error sending TX. Refresh this page and try again!</h3>
+                        </div>
+                        <div id="hashResult">
+                            <h3>Transaction Hash</h3>
+                            <div id="txhash" style="border: 1px solid #000; padding-left: 5px">
+                            </div>
+                            <h3>Check Transaction on explorer</h3>
+                            <span id="eth_exp"></span>
+                            <span id="etc_exp"></span>
+                            <span id="clo_exp"></span>
+                            <span id="ella_exp"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section main content -->
+        <footer>
+            <div class="verybottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <div class="aligncenter">
+                                <div class="credits">
+                                    <p>
+                                        <h2 style="color: #fff">&copy; 2018-2019<a href="http://4en.app/">4en.app</a></h2>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-48 active"></i></a>
+       <script>
+            function update_stats(){
+                //EUR-USD Ratio from http://free.currencyconverterapi.com/api/v5/convert?q=EUR_USD&compact=y
+                get("apicall.php?apimethod=GET&apiurl=http://free.currencyconverterapi.com/api/v5/convert?q=EUR_USD&compact=y", "eur");
+                //Data from coincalculators.io
+                get("apicall.php?apimethod=GET&apiurl=https://www.coincalculators.io/API?name=callisto","clo");//CLO
+                get("apicall.php?apimethod=GET&apiurl=https://www.coincalculators.io/API?name=ethereum","eth");//ETH
+                get("apicall.php?apimethod=GET&apiurl=https://www.coincalculators.io/API?name=ethereumclassic","etc");//ETC
+                get("apicall.php?apimethod=GET&apiurl=https://www.coincalculators.io/API?name=ellaism","ella");//ELLA
+            }
+        </script>
+    </body>
+</html>

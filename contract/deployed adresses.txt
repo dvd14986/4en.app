@@ -1,0 +1,5 @@
+Addresses of deployed contracts
+0x96cf3338e7b068cf2ac462474b83b5f8a030dd1b //Ethereum
+0x376a8A2Ff16Df9e0Cd6AefB80F7b589c3426D953 //Ethereum Classic
+0xc55704fc5b494bc8aae0675fc0275d716f6b9f04 //Callisto Network
+0xc55704fc5b494bc8aae0675fc0275d716f6b9f04 //Ellaism
